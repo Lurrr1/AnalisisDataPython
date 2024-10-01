@@ -3,9 +3,16 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Load datasets
-df_Shunyi = pd.read_csv('../data/PRSA_Data_Shunyi_20130301-20170228.csv')
-df_Tiantan = pd.read_csv('../data/PRSA_Data_Tiantan_20130301-20170228.csv')
-df_Wanliu = pd.read_csv('../data/PRSA_Data_Wanliu_20130301-20170228.csv')
+#df_Shunyi = pd.read_csv('../data/PRSA_Data_Shunyi_20130301-20170228.csv')
+#df_Tiantan = pd.read_csv('../data/PRSA_Data_Tiantan_20130301-20170228.csv')
+#df_Wanliu = pd.read_csv('../data/PRSA_Data_Wanliu_20130301-20170228.csv')
+
+url = 'https://raw.githubusercontent.com/Lurrr1/AnalisisDataPython/refs/heads/main/data/PRSA_Data_Shunyi_20130301-20170228.csv'
+df_Shunyi = pd.read_csv(url)
+url = 'https://raw.githubusercontent.com/Lurrr1/AnalisisDataPython/refs/heads/main/data/PRSA_Data_Tiantan_20130301-20170228.csv'
+df_Tiantan = pd.read_csv(url)
+url = 'https://raw.githubusercontent.com/Lurrr1/AnalisisDataPython/refs/heads/main/data/PRSA_Data_Wanliu_20130301-20170228.csv'
+df_Wanliu= pd.read_csv(url)
 
 # mengisi missing value dengan nilai rata-rata
 df_Shunyi_fill = df_Shunyi.fillna(df_Shunyi.mean(numeric_only=True))
